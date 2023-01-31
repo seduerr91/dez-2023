@@ -1,4 +1,4 @@
-# My works
+# Seb Week 2 Submission
 
 ## Step 1: Setup
 
@@ -12,7 +12,7 @@
 1. Data Lake: Overview differences Data Lake <> Data Warehouse; ETL <> ELT
 2. Workflow Orchestration: tool to visualize data flows, execute them remotely, handle faults (retries), logging (log_prints=True) integrate with external services etc.
 3. Prefect: Rewriting of ingest_data.py and adding @flow and @task decorates to track them in Prect Orion UI. Introduction of 'Prefect Blocks' to store SQLAlchemyConnector creds. 
-4. ETL witH GCP and Prefect (file [ETL_WEB_TO_GCS](https://github.com/padilha/de-zoomcamp/blob/master/week2/etl_web_to_gcs.py)): saving data locally and uploading it to GCP (seems stupid)!
+4. ETL witH GCP and Prefect (file [ETL_WEB_TO_GCS](https://github.com/padilha/de-zoomcamp/blob/master/week2/etl_web_to_gcs.py)): saving data locally and uploading it to GCP!
 
 ## Step 2: Addressing Homework
 
@@ -22,16 +22,21 @@ Using the `etl_web_to_gcs.py` flow that loads taxi data into GCS as a guide, cre
 
 How many rows does that dataset have?
 
+#### Solution
+
 - 447,770 <<<<<<<<<<
 - 766,792
 - 299,234
 - 822,132
 
-Tasks:
+#### Edits in Script
 
 - Edit script and link. See that pick up and dropoff are starting with l.
 - 'Unable to find block document named zoom-gcs for block type gcs-bucket': I linked the solution in the FAQ Google Doc.
 
+#### Bash result
+
+```bash
 My logs: seb@private 02_gcp % python3 etl_web_to_gcs.py
 11:50:07.693 | INFO    | prefect.engine - Created flow run 'precious-salamander' for flow 'etl-web-to-gcs'
 11:50:07.763 | INFO    | Flow run 'precious-salamander' - Created task run 'fetch-b4598a4a-0' for task 'fetch'
@@ -78,6 +83,9 @@ dtype: object
 11:50:11.193 | INFO    | Task run 'write_gcs-1145c921-0' - Uploading from PosixPath('data/green/green_tripdata_2020-01.parquet') to the bucket 'dtc_data_lake_aqueous-abbey-375520' path 'data/green/green_tripdata_2020-01.parquet'.
 11:50:14.642 | INFO    | Task run 'write_gcs-1145c921-0' - Finished in state Completed()
 11:50:14.660 | INFO    | Flow run 'precious-salamander' - Finished in state Completed('All states completed.')
+```
+
+#### Used sript
 
 ```python
 def etl_web_to_gcs() -> None:
@@ -99,6 +107,8 @@ Cron is a common scheduling specification for workflows.
 
 Using the flow in `etl_web_to_gcs.py`, create a deployment to run on the first of every month at 5am UTC. What’s the cron schedule for that?
 
+#### Answer
+
 - `0 5 1 * *` <<<<<0 5 1 * * >>>>>
 - `0 0 5 1 *`
 - `5 * 1 0 *`
@@ -118,13 +128,16 @@ Create a deployment for this flow to run in a local subprocess with local flow c
 
 Make sure you have the parquet data files for Yellow taxi data for Feb. 2019 and March 2019 loaded in GCS. Run your deployment to append this data to your BiqQuery table. How many rows did your flow code process?
 
+#### Answer
+
 - 14,851,920 <<<<<<<<< ~15M >>>>>>>>>
 - 12,282,990
 - 27,235,753
 - 11,338,483
 
-I edited the file as follows: 
+#### My edited code
 
+```python
 @flow(log_prints=True)
 def etl_gcs_to_bq():
     """Main ETL flow to load data into Big Query"""
@@ -135,12 +148,13 @@ def etl_gcs_to_bq():
         path = extract_from_gcs(color, year, month)
         df = transform(path)
         write_bq(df)
+```
+
+#### Changelog
 
 - [x] Logs decorator.
 - [x] Multiple months.
 - [x] color yellow, year 2019.
-
-
 
 ### Question 4. Github Storage Block
 
@@ -152,15 +166,19 @@ Run your deployment in a local subprocess (the default if you don’t specify an
 
 How many rows were processed by the script?
 
+#### Answer
+
 - 88,019
 - 192,297
-- 88,605
+- 88,605 <<< 88,605 >>>
 - 190,225
 
+#### My code edits
+
+```python
 from prefect.filesystems import GitHub
-
 github_block = GitHub.load("dez")
-
+```
 
 ### Question 5. Email or Slack notifications
 
@@ -182,12 +200,40 @@ Test the functionality.
 
 Alternatively, you can grab the webhook URL from your own Slack workspace and Slack App that you create.
 
+#### My webhook overview
+
+![slack](img/seb_slack_webhook.png)
+
 How many rows were processed by the script?
+
+#### Answer
 
 - `125,268`
 - `377,922`
 - `728,390`
-- `514,392`
+- `514,392` <<< see line 4 below >>>
+
+#### Bash outputs
+
+```bash
+15:07:02.845 | INFO    | prefect.engine - Created flow run 'hairy-tarsier' for flow 'etl-web-to-gcs'
+15:07:02.917 | INFO    | Flow run 'hairy-tarsier' - Created task run 'fetch-b4598a4a-0' for task 'fetch'
+15:07:02.918 | INFO    | Flow run 'hairy-tarsier' - Executing 'fetch-b4598a4a-0' immediately...
+SD: Shape of df:  (514392, 20)
+15:07:04.755 | INFO    | Task run 'fetch-b4598a4a-0' - Finished in state Completed()
+15:07:04.770 | INFO    | Flow run 'hairy-tarsier' - Created task run 'clean-b9fd7e03-0' for task 'clean'
+15:07:04.770 | INFO    | Flow run 'hairy-tarsier' - Executing 'clean-b9fd7e03-0' immediately...
+15:07:04.912 | INFO    | Task run 'clean-b9fd7e03-0' - Finished in state Completed()
+15:07:04.924 | INFO    | Flow run 'hairy-tarsier' - Created task run 'write_local-f322d1be-0' for task 'write_local'
+15:07:04.924 | INFO    | Flow run 'hairy-tarsier' - Executing 'write_local-f322d1be-0' immediately...
+15:07:05.927 | INFO    | Task run 'write_local-f322d1be-0' - Finished in state Completed()
+15:07:05.937 | INFO    | Flow run 'hairy-tarsier' - Created task run 'write_gcs-1145c921-0' for task 'write_gcs'
+15:07:05.937 | INFO    | Flow run 'hairy-tarsier' - Executing 'write_gcs-1145c921-0' immediately...
+15:07:06.032 | INFO    | Task run 'write_gcs-1145c921-0' - Getting bucket 'dtc_data_lake_aqueous-abbey-375520'.
+15:07:07.363 | INFO    | Task run 'write_gcs-1145c921-0' - Uploading from PosixPath('data/green/green_tripdata_2019-04.parquet') to the bucket 'dtc_data_lake_aqueous-abbey-375520' path 'data/green/green_tripdata_2019-04.parquet'.
+15:07:12.297 | INFO    | Task run 'write_gcs-1145c921-0' - Finished in state Completed()
+15:07:12.316 | INFO    | Flow run 'hairy-tarsier' - Finished in state Completed('All states completed.')
+```
 
 ### Question 6. Secrets
 
@@ -197,4 +243,15 @@ Prefect Secret blocks provide secure, encrypted storage in the database and obfu
 - 6
 - 8
 - 10
-****
+
+#### Screenshot
+
+![secret](img/secretsasteriks.png)
+
+#### Answer
+
+<<<<<<<<<<All 10>>>>>>>>>>
+
+This week, I helped with the following:
+
+![help week 2](img/week_2_seb_help.png)
