@@ -1,0 +1,136 @@
+seb@Seb-Corteva dez-2023 % python3 gh_etl_web_to_gcs.py
+12:51:41.314 | INFO    | prefect.engine - Created flow run 'amorphous-stoat' for flow 'etl-web-to-gcs'
+https://github.com/DataTalksClub/nyc-tlc-data/releases/download/fhv/fhv_tripdata_2019-01.csv.gz
+12:51:41.601 | INFO    | Flow run 'amorphous-stoat' - Created task run 'fetch-0' for task 'fetch'
+12:51:41.602 | INFO    | Flow run 'amorphous-stoat' - Executing 'fetch-0' immediately...
+SD: Shape of df:  (23143222, 7)
+12:52:29.917 | INFO    | Task run 'fetch-0' - Finished in state Completed()
+12:52:29.957 | INFO    | Flow run 'amorphous-stoat' - Created task run 'clean-0' for task 'clean'
+12:52:29.958 | INFO    | Flow run 'amorphous-stoat' - Executing 'clean-0' immediately...
+12:52:30.038 | INFO    | Task run 'clean-0' - Finished in state Completed()
+12:52:30.063 | INFO    | Flow run 'amorphous-stoat' - Created task run 'write_local-0' for task 'write_local'
+12:52:30.064 | INFO    | Flow run 'amorphous-stoat' - Executing 'write_local-0' immediately...
+12:53:06.349 | INFO    | Task run 'write_local-0' - Finished in state Completed()
+https://github.com/DataTalksClub/nyc-tlc-data/releases/download/fhv/fhv_tripdata_2019-02.csv.gz
+12:53:06.386 | INFO    | Flow run 'amorphous-stoat' - Created task run 'fetch-1' for task 'fetch'
+12:53:06.387 | INFO    | Flow run 'amorphous-stoat' - Executing 'fetch-1' immediately...
+SD: Shape of df:  (1707649, 7)
+12:53:10.110 | INFO    | Task run 'fetch-1' - Finished in state Completed()
+12:53:10.142 | INFO    | Flow run 'amorphous-stoat' - Created task run 'clean-1' for task 'clean'
+12:53:10.143 | INFO    | Flow run 'amorphous-stoat' - Executing 'clean-1' immediately...
+12:53:10.222 | INFO    | Task run 'clean-1' - Finished in state Completed()
+12:53:10.249 | INFO    | Flow run 'amorphous-stoat' - Created task run 'write_local-1' for task 'write_local'
+12:53:10.250 | INFO    | Flow run 'amorphous-stoat' - Executing 'write_local-1' immediately...
+12:53:13.062 | INFO    | Task run 'write_local-1' - Finished in state Completed()
+https://github.com/DataTalksClub/nyc-tlc-data/releases/download/fhv/fhv_tripdata_2019-03.csv.gz
+12:53:13.088 | INFO    | Flow run 'amorphous-stoat' - Created task run 'fetch-2' for task 'fetch'
+12:53:13.089 | INFO    | Flow run 'amorphous-stoat' - Executing 'fetch-2' immediately...
+SD: Shape of df:  (1475564, 7)
+12:53:16.444 | INFO    | Task run 'fetch-2' - Finished in state Completed()
+12:53:16.474 | INFO    | Flow run 'amorphous-stoat' - Created task run 'clean-2' for task 'clean'
+12:53:16.474 | INFO    | Flow run 'amorphous-stoat' - Executing 'clean-2' immediately...
+12:53:16.537 | INFO    | Task run 'clean-2' - Finished in state Completed()
+12:53:16.562 | INFO    | Flow run 'amorphous-stoat' - Created task run 'write_local-2' for task 'write_local'
+12:53:16.563 | INFO    | Flow run 'amorphous-stoat' - Executing 'write_local-2' immediately...
+12:53:19.118 | INFO    | Task run 'write_local-2' - Finished in state Completed()
+https://github.com/DataTalksClub/nyc-tlc-data/releases/download/fhv/fhv_tripdata_2019-04.csv.gz
+12:53:19.138 | INFO    | Flow run 'amorphous-stoat' - Created task run 'fetch-3' for task 'fetch'
+12:53:19.139 | INFO    | Flow run 'amorphous-stoat' - Executing 'fetch-3' immediately...
+SD: Shape of df:  (1937844, 7)
+12:53:27.080 | INFO    | Task run 'fetch-3' - Finished in state Completed()
+12:53:27.113 | INFO    | Flow run 'amorphous-stoat' - Created task run 'clean-3' for task 'clean'
+12:53:27.114 | INFO    | Flow run 'amorphous-stoat' - Executing 'clean-3' immediately...
+12:53:27.194 | INFO    | Task run 'clean-3' - Finished in state Completed()
+12:53:27.222 | INFO    | Flow run 'amorphous-stoat' - Created task run 'write_local-3' for task 'write_local'
+12:53:27.223 | INFO    | Flow run 'amorphous-stoat' - Executing 'write_local-3' immediately...
+12:53:30.490 | INFO    | Task run 'write_local-3' - Finished in state Completed()
+https://github.com/DataTalksClub/nyc-tlc-data/releases/download/fhv/fhv_tripdata_2019-05.csv.gz
+12:53:30.514 | INFO    | Flow run 'amorphous-stoat' - Created task run 'fetch-4' for task 'fetch'
+12:53:30.515 | INFO    | Flow run 'amorphous-stoat' - Executing 'fetch-4' immediately...
+SD: Shape of df:  (2073045, 7)
+12:53:35.483 | INFO    | Task run 'fetch-4' - Finished in state Completed()
+12:53:35.530 | INFO    | Flow run 'amorphous-stoat' - Created task run 'clean-4' for task 'clean'
+12:53:35.532 | INFO    | Flow run 'amorphous-stoat' - Executing 'clean-4' immediately...
+12:53:35.619 | INFO    | Task run 'clean-4' - Finished in state Completed()
+12:53:35.651 | INFO    | Flow run 'amorphous-stoat' - Created task run 'write_local-4' for task 'write_local'
+12:53:35.652 | INFO    | Flow run 'amorphous-stoat' - Executing 'write_local-4' immediately...
+12:53:38.953 | INFO    | Task run 'write_local-4' - Finished in state Completed()
+https://github.com/DataTalksClub/nyc-tlc-data/releases/download/fhv/fhv_tripdata_2019-06.csv.gz
+12:53:38.982 | INFO    | Flow run 'amorphous-stoat' - Created task run 'fetch-5' for task 'fetch'
+12:53:38.983 | INFO    | Flow run 'amorphous-stoat' - Executing 'fetch-5' immediately...
+SD: Shape of df:  (2009886, 7)
+12:53:47.176 | INFO    | Task run 'fetch-5' - Finished in state Completed()
+12:53:47.201 | INFO    | Flow run 'amorphous-stoat' - Created task run 'clean-5' for task 'clean'
+12:53:47.201 | INFO    | Flow run 'amorphous-stoat' - Executing 'clean-5' immediately...
+12:53:47.274 | INFO    | Task run 'clean-5' - Finished in state Completed()
+12:53:47.313 | INFO    | Flow run 'amorphous-stoat' - Created task run 'write_local-5' for task 'write_local'
+12:53:47.314 | INFO    | Flow run 'amorphous-stoat' - Executing 'write_local-5' immediately...
+12:53:50.567 | INFO    | Task run 'write_local-5' - Finished in state Completed()
+https://github.com/DataTalksClub/nyc-tlc-data/releases/download/fhv/fhv_tripdata_2019-07.csv.gz
+12:53:50.590 | INFO    | Flow run 'amorphous-stoat' - Created task run 'fetch-6' for task 'fetch'
+12:53:50.590 | INFO    | Flow run 'amorphous-stoat' - Executing 'fetch-6' immediately...
+SD: Shape of df:  (1947739, 7)
+12:53:54.547 | INFO    | Task run 'fetch-6' - Finished in state Completed()
+12:53:54.574 | INFO    | Flow run 'amorphous-stoat' - Created task run 'clean-6' for task 'clean'
+12:53:54.575 | INFO    | Flow run 'amorphous-stoat' - Executing 'clean-6' immediately...
+12:53:54.637 | INFO    | Task run 'clean-6' - Finished in state Completed()
+12:53:54.663 | INFO    | Flow run 'amorphous-stoat' - Created task run 'write_local-6' for task 'write_local'
+12:53:54.664 | INFO    | Flow run 'amorphous-stoat' - Executing 'write_local-6' immediately...
+12:53:57.718 | INFO    | Task run 'write_local-6' - Finished in state Completed()
+https://github.com/DataTalksClub/nyc-tlc-data/releases/download/fhv/fhv_tripdata_2019-08.csv.gz
+12:53:57.741 | INFO    | Flow run 'amorphous-stoat' - Created task run 'fetch-7' for task 'fetch'
+12:53:57.742 | INFO    | Flow run 'amorphous-stoat' - Executing 'fetch-7' immediately...
+SD: Shape of df:  (1880407, 7)
+12:54:01.739 | INFO    | Task run 'fetch-7' - Finished in state Completed()
+12:54:01.768 | INFO    | Flow run 'amorphous-stoat' - Created task run 'clean-7' for task 'clean'
+12:54:01.768 | INFO    | Flow run 'amorphous-stoat' - Executing 'clean-7' immediately...
+12:54:01.844 | INFO    | Task run 'clean-7' - Finished in state Completed()
+12:54:01.879 | INFO    | Flow run 'amorphous-stoat' - Created task run 'write_local-7' for task 'write_local'
+12:54:01.880 | INFO    | Flow run 'amorphous-stoat' - Executing 'write_local-7' immediately...
+12:54:05.092 | INFO    | Task run 'write_local-7' - Finished in state Completed()
+https://github.com/DataTalksClub/nyc-tlc-data/releases/download/fhv/fhv_tripdata_2019-09.csv.gz
+12:54:05.119 | INFO    | Flow run 'amorphous-stoat' - Created task run 'fetch-8' for task 'fetch'
+12:54:05.120 | INFO    | Flow run 'amorphous-stoat' - Executing 'fetch-8' immediately...
+SD: Shape of df:  (1248514, 7)
+12:54:11.174 | INFO    | Task run 'fetch-8' - Finished in state Completed()
+12:54:11.200 | INFO    | Flow run 'amorphous-stoat' - Created task run 'clean-8' for task 'clean'
+12:54:11.200 | INFO    | Flow run 'amorphous-stoat' - Executing 'clean-8' immediately...
+12:54:11.265 | INFO    | Task run 'clean-8' - Finished in state Completed()
+12:54:11.306 | INFO    | Flow run 'amorphous-stoat' - Created task run 'write_local-8' for task 'write_local'
+12:54:11.307 | INFO    | Flow run 'amorphous-stoat' - Executing 'write_local-8' immediately...
+12:54:13.513 | INFO    | Task run 'write_local-8' - Finished in state Completed()
+https://github.com/DataTalksClub/nyc-tlc-data/releases/download/fhv/fhv_tripdata_2019-10.csv.gz
+12:54:13.539 | INFO    | Flow run 'amorphous-stoat' - Created task run 'fetch-9' for task 'fetch'
+12:54:13.540 | INFO    | Flow run 'amorphous-stoat' - Executing 'fetch-9' immediately...
+SD: Shape of df:  (1897493, 7)
+12:54:21.446 | INFO    | Task run 'fetch-9' - Finished in state Completed()
+12:54:21.472 | INFO    | Flow run 'amorphous-stoat' - Created task run 'clean-9' for task 'clean'
+12:54:21.472 | INFO    | Flow run 'amorphous-stoat' - Executing 'clean-9' immediately...
+12:54:21.535 | INFO    | Task run 'clean-9' - Finished in state Completed()
+12:54:21.561 | INFO    | Flow run 'amorphous-stoat' - Created task run 'write_local-9' for task 'write_local'
+12:54:21.562 | INFO    | Flow run 'amorphous-stoat' - Executing 'write_local-9' immediately...
+12:54:24.719 | INFO    | Task run 'write_local-9' - Finished in state Completed()
+https://github.com/DataTalksClub/nyc-tlc-data/releases/download/fhv/fhv_tripdata_2019-11.csv.gz
+12:54:24.746 | INFO    | Flow run 'amorphous-stoat' - Created task run 'fetch-10' for task 'fetch'
+12:54:24.746 | INFO    | Flow run 'amorphous-stoat' - Executing 'fetch-10' immediately...
+SD: Shape of df:  (1879137, 7)
+12:54:29.418 | INFO    | Task run 'fetch-10' - Finished in state Completed()
+12:54:29.447 | INFO    | Flow run 'amorphous-stoat' - Created task run 'clean-10' for task 'clean'
+12:54:29.448 | INFO    | Flow run 'amorphous-stoat' - Executing 'clean-10' immediately...
+12:54:29.523 | INFO    | Task run 'clean-10' - Finished in state Completed()
+12:54:29.550 | INFO    | Flow run 'amorphous-stoat' - Created task run 'write_local-10' for task 'write_local'
+12:54:29.551 | INFO    | Flow run 'amorphous-stoat' - Executing 'write_local-10' immediately...
+12:54:32.571 | INFO    | Task run 'write_local-10' - Finished in state Completed()
+https://github.com/DataTalksClub/nyc-tlc-data/releases/download/fhv/fhv_tripdata_2019-12.csv.gz
+12:54:32.595 | INFO    | Flow run 'amorphous-stoat' - Created task run 'fetch-11' for task 'fetch'
+12:54:32.596 | INFO    | Flow run 'amorphous-stoat' - Executing 'fetch-11' immediately...
+SD: Shape of df:  (2044196, 7)
+12:54:42.182 | INFO    | Task run 'fetch-11' - Finished in state Completed()
+12:54:42.208 | INFO    | Flow run 'amorphous-stoat' - Created task run 'clean-11' for task 'clean'
+12:54:42.208 | INFO    | Flow run 'amorphous-stoat' - Executing 'clean-11' immediately...
+12:54:42.282 | INFO    | Task run 'clean-11' - Finished in state Completed()
+12:54:42.315 | INFO    | Flow run 'amorphous-stoat' - Created task run 'write_local-11' for task 'write_local'
+12:54:42.316 | INFO    | Flow run 'amorphous-stoat' - Executing 'write_local-11' immediately...
+12:54:45.698 | INFO    | Task run 'write_local-11' - Finished in state Completed()
+12:54:45.790 | INFO    | Flow run 'amorphous-stoat' - Finished in state Completed('All states completed.')
+seb@Seb-Corteva dez-2023 % 
