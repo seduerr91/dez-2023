@@ -134,6 +134,11 @@ WHERE pickup_datetime BETWEEN TIMESTAMP('2019/03/01 00:00:00') AND TIMESTAMP('20
 - Container Registry
 - Big Table
 
+### Question 7: It is best practice in Big Query to always cluster your data:
+
+- True
+- `False`
+
 ### This weeks help
 
 These won't work. You need to make sure you use Int64: 
