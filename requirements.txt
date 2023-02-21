@@ -1,0 +1,4 @@
+pandas
+prefect
+fastparquet
+prefect_gcp[cloud_storage]
