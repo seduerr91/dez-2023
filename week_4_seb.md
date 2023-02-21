@@ -30,9 +30,6 @@ GROUP BY service_type;
 
 ## Question 3: **What is the count of records in the model stg_fhv_tripdata after running all models with the test run variable disabled (:false)?**  
 
-Create a staging model for the fhv data for 2019 and do not add a deduplication step. Run it via the CLI without limits (is_test_run: false).
-Filter records with pickup time in year 2019.
-
 ```sql
 SELECT COUNT(*) 
 FROM `aqueous-abbey-375520.trips_data_all.stg_fhv_tripdata`;
@@ -62,26 +59,12 @@ FROM `aqueous-abbey-375520.trips_data_all.fact_fhv_trips`;
 
 **What is the month with the biggest amount of rides after building a tile for the fact_fhv_trips table?**
 
-Create a dashboard with some tiles that you find interesting to explore the data. One tile should show the amount of trips per month, as done in the videos for fact_trips, based on the fact_fhv_trips table.
-
-Retrived my response via Data Studio.
+Retrieved my response via Data Studio.
 
 - March
 - April
 - `January`
 - December
-
-## Submitting the solutions
-
-* Form for submitting: https://forms.gle/6A94GPutZJTuT5Y16
-* You can submit your homework multiple times. In this case, only the last submission will be used. 
-
-Deadline: 25 February (Saturday), 22:00 CET
-
-
-## Solution
-
-We will publish the solution here
 
 ## Help
 
