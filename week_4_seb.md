@@ -41,9 +41,7 @@ FROM `aqueous-abbey-375520.trips_data_all.stg_fhv_tripdata`;
 - 63244696
 
 
-## Question 4
-
-**What is the count of records in the model fact_fhv_trips after running all dependencies with the test run variable disabled (:false)?**  
+## Question 4: **What is the count of records in the model fact_fhv_trips after running all dependencies with the test run variable disabled (:false)?**  
 
 ```sql
 SELECT count(*) 
@@ -55,9 +53,7 @@ FROM `aqueous-abbey-375520.trips_data_all.fact_fhv_trips`;
 - 32998722
 - 42998722
 
-## Question 5
-
-**What is the month with the biggest amount of rides after building a tile for the fact_fhv_trips table?**
+## Question 5: **What is the month with the biggest amount of rides after building a tile for the fact_fhv_trips table?**
 
 Retrieved my response via Data Studio.
 
