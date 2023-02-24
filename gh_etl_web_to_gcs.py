@@ -16,12 +16,12 @@ def fetch(dataset_url: str) -> pd.DataFrame:
 @task()
 def clean(df: pd.DataFrame) -> pd.DataFrame:
     """Fix dtype issues"""
-    
-    # yellow taxi data 
+
+    # yellow taxi data
     # df['tpep_pickup_datetime'] = pd.to_datetime(df['tpep_pickup_datetime'])
     # df['tpep_dropoff_datetime'] = pd.to_datetime(df['tpep_dropoff_datetime'])
-    
-    # green taxi data 
+
+    # green taxi data
     df['lpep_pickup_datetime'] = pd.to_datetime(df['lpep_pickup_datetime'])
     df['lpep_dropoff_datetime'] = pd.to_datetime(df['lpep_dropoff_datetime'])
     df["PULocationID"] = df.PULocationID.astype("Int64")
@@ -31,7 +31,6 @@ def clean(df: pd.DataFrame) -> pd.DataFrame:
     df['RatecodeID'] = df['RatecodeID'].astype('Int64')
     df['trip_type'] = df['trip_type'].astype('Int64')
     df['VendorID'] = df['VendorID'].astype('Int64')
-    
 
     # fhv
     # df["pickup_datetime"] = pd.to_datetime(df["pickup_datetime"])
@@ -53,7 +52,7 @@ def write_local(df: pd.DataFrame, dataset_file: str) -> Path:
 @task()
 def write_gcs(path: Path) -> None:
     """Upload local parquet file to GCS"""
-    # get token from 
+    # get token from
     gcs_block = GcsBucket.load("zoomcamp-gcs")
     gcs_block.upload_from_path(from_path=path, to_path=path)
     return
@@ -62,19 +61,19 @@ def write_gcs(path: Path) -> None:
 @flow()
 def etl_web_to_gcs() -> None:
     """The main ETL function"""
-    
+
     year = 2020
-    
-    for month in range(1,13):
-        
+
+    for month in range(1, 13):
+
         # fhv
         # dataset_url = f"https://github.com/DataTalksClub/nyc-tlc-data/releases/download/fhv/fhv_tripdata_{year}-{month:02}.csv.gz"
         # dataset_file = f"data/fhv/fhv_tripdata_{year}-{month:02}"
-        
+
         # yellow
         # dataset_url = f"https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_{year}-{month:02}.csv.gz"
         # dataset_file = f"data/yellow/yellow_tripdata_{year}-{month:02}"
-        
+
         # green
         dataset_url = f"https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_{year}-{month:02}.csv.gz"
         dataset_file = f"data/green/green_tripdata_{year}-{month:02}"
