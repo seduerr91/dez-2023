@@ -130,6 +130,13 @@ HVFHW in the question refers to the FHVHV dataset linked here: <https://github.c
 
 ![seb help week 5](img/week_5_seb_help.png)
 
+## Public 
+
+- [Facebook](https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fseduerr%2Fposts%2Fpfbid0nnSrCKoxsepzC6pV9BAvsxWt3sRpqivJ5jgnaLS2iU9CNmP81QWLEoQe4fMKFhhyl&show_text=true&width=500)
+- [Twitter](https://twitter.com/sbstn2809/status/1632528011970113538)
+
+
+
 ## My Notes to get server started
 
 Remote connection via SSH
